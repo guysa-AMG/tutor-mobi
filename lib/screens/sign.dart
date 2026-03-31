@@ -8,24 +8,69 @@ class SignInScreen extends StatefulWidget {
 }
 
 class SignInScreenState extends State<SignInScreen> {
+  ButtonStyle btnStyle = ButtonStyle(
+    backgroundColor: WidgetStatePropertyAll(Colors.deepOrange),
+    foregroundColor: WidgetStatePropertyAll(Colors.white  ),
+    iconColor: WidgetStatePropertyAll(Colors.white),
+    shape: WidgetStatePropertyAll(RoundedRectangleBorder(borderRadius: BorderRadiusGeometry.circular(5)))
+
+    
+  );
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: Column(
-          children: [
-            Text("Sign In To Continue")
-            ,
-            Text("please sign in to continue"),
+      body: Center(
+        child: Container(
+          color: Color(0xFF000000),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            spacing: 50,
+            children: [
+              FlutterLogo(),
+              Text(
+                "Sign In To Continue",
+                style: TextStyle(fontSize: 30, color: Colors.cyan),
+              ),
+              Text(
+                "please sign in to continue",
+                style: TextStyle(fontSize: 18, color: Color(0xFFFFDBCF)),
+              ),
 
-            Container(
-              child: Column(
+              Container(
+                child: Column(
+                  spacing: 10,
+                  children: [
+                    ElevatedButton.icon(
+                      onPressed: null,
+                      label: Text("sign in with google"),
+                      icon: FaIcon(FontAwesomeIcons.google),
+                      style: btnStyle,
+                    ),
+                    ElevatedButton.icon(
+                      onPressed: null,
+                      label: Text("sign in with Github"),
+                      icon: FaIcon(FontAwesomeIcons.github),
+                         style: btnStyle,
+                    ),
+                    ElevatedButton.icon(
+                      onPressed: null,
+                      label: Text("sign in with Gitlab"),
+                      icon: FaIcon(FontAwesomeIcons.gitlab),
+                         style: btnStyle,
+                    ),
+                  ],
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ElevatedButton.icon(onPressed: null, label: Text("sign in with google"),icon: FaIcon(FontAwesomeIcons.google),)
+                  TextButton(onPressed: null, child: Text("Privacy Policy", style: TextStyle(color: Color(0xFFFFDBCF)))),
+                  TextButton(onPressed: null, child: Text("Terms of Use", style: TextStyle(color: Color(0xFFFFDBCF)))),
+                  TextButton(onPressed: null, child: Text("Data Policy", style: TextStyle(color: Color(0xFFFFDBCF)))),
                 ],
               ),
-            )
-              ],
+            ],
+          ),
         ),
       ),
     );
