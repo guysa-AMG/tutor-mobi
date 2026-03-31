@@ -5,6 +5,8 @@ import 'package:flutter_chat_ui/flutter_chat_ui.dart';
 import 'package:flutter_chat_core/flutter_chat_core.dart';
 
 class MessageScreen extends StatefulWidget {
+  const MessageScreen({super.key});
+
   @override
   State<MessageScreen> createState() => MessageScreenState();
 }
@@ -21,22 +23,28 @@ class MessageScreenState extends State<MessageScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("lets chat"), centerTitle: true,leading: BackButton(),),
+      appBar: AppBar(
+        title: Text("lets chat"),
+        centerTitle: true,
+        leading: BackButton(),
+      ),
       body: Chat(
-        
         theme: Theme.of(context).brightness == Brightness.dark
             ? ChatTheme.dark()
             : ChatTheme.light(),
         currentUserId: "me",
         onMessageSend: (text) {
-          _inMemoryController.insertMessage(TextMessage(id: "${Random().nextInt(100)}",text: text,authorId: "me"));
-          setState(() {
-            
-          });
+          _inMemoryController.insertMessage(
+            TextMessage(
+              id: "${Random().nextInt(100)}",
+              text: text,
+              authorId: "me",
+            ),
+          );
+          setState(() {});
         },
-        resolveUser: (String id)async{
-          
-          return  User(id: id);
+        resolveUser: (String id) async {
+          return User(id: id);
         },
         chatController: _inMemoryController,
       ),

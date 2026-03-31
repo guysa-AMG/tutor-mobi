@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:tutor/models/challenge.dart';
 import 'package:tutor/service/repository/Service1.dart';
+import 'package:tutor/ui/cards/challenge.dart';
 
 class Home extends StatefulWidget {
+  const Home({super.key});
+
   @override
   State<Home> createState() => HomeState();
 }
@@ -16,7 +20,7 @@ class HomeState extends State<Home> {
           print(snapshot.error);
         }
         if (snapshot.hasData) {
-          return Text(snapshot.data.toString());
+          return ChallengeCard(challenge: snapshot.data!);
         }
         return CircularProgressIndicator();
       },

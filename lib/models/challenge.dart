@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class Challenge {
   @protected
-  String title;
+  String description;
   @protected
   String question;
   @protected
@@ -11,18 +11,23 @@ class Challenge {
   String skill;
 
   Challenge({
-    required this.title,
+    required this.description,
     required this.question,
     required this.answer,
     required this.skill,
   });
 
+  String get getdescription => description;
+  String get getQuestion => question;
+  String get getAnswer => answer;
+  String get getSkill => skill;
+
   factory Challenge.fromJson(Map<String, dynamic> data) {
     return Challenge(
-      title: data["title"],
+      description: data["description"],
       question: data["question"],
       answer: data["answer"],
-      skill: data["skill"]
+      skill: data["skill"],
     );
   }
 }

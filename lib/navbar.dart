@@ -4,6 +4,8 @@ import 'package:tutor/screens/chat.dart';
 import 'package:tutor/screens/home.dart';
 
 class NavBar extends StatefulWidget {
+  const NavBar({super.key});
+
   @override
   State<NavBar> createState() => NavBarState();
 }
@@ -24,28 +26,36 @@ class NavBarState extends State<NavBar> {
         child: Icon(LucideIcons.bot),
       ),
 
-      bottomNavigationBar: NavigationBar(
-   
-        selectedIndex: current_index,
-        onDestinationSelected: (value) {
-          setState(() {
-            current_index = value;
-          });
-        },
-        
-        destinations: [
-          NavigationDestination(icon: Icon(LucideIcons.home), label: "HOME"),
-          NavigationDestination(
-            icon: Icon(LucideIcons.navigation),
-            label: "EXPLORE",
-          ),
-          NavigationDestination(
-            icon: Icon(LucideIcons.book),
-            label: "LEARNING",
-          ),
-          NavigationDestination(icon: Icon(LucideIcons.user), label: "Profile"),
-        ],
-      ),
+      bottomNavigationBar: 
+         BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          currentIndex: current_index,
+          onTap: (value) {
+            setState(() {
+              current_index = value;
+            });
+          },
+
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(LucideIcons.home),
+              label: "HOME",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(LucideIcons.navigation),
+              label: "EXPLORE",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(LucideIcons.book),
+              label: "LEARNING",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(LucideIcons.user),
+              label: "Profile",
+            ),
+          ],
+        ),
+      
     );
   }
 }
