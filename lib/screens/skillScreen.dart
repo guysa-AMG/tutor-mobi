@@ -13,6 +13,12 @@ class SkillScreenState extends State<SkillScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: PreferredSize(preferredSize: Size.fromHeight(120),
+       child:Container(
+     
+        child: SearchBar(
+        hintText: "Search Skill",
+       ))),
       body: FutureBuilder(
         future: Service1.getInstance.getPaths(),
         builder: (ctx, snapshot) {
@@ -22,8 +28,10 @@ class SkillScreenState extends State<SkillScreen> {
           if (snapshot.hasData) {
             return GridView(
               physics: NeverScrollableScrollPhysics(),
-
+              padding: EdgeInsets.symmetric(horizontal: 10,vertical: 30),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                mainAxisSpacing: 40,
+                crossAxisSpacing: 10,
                 crossAxisCount: 4,
               ),
               children: snapshot.data!

@@ -12,6 +12,9 @@ class LearnCard extends StatefulWidget {
 class LearnCardState extends State<LearnCard> {
   @override
   Widget build(BuildContext context) {
-    return Container(child: Text(this.widget.skill.title));
+    return Container(
+      alignment: Alignment.center,
+      color: Colors.amberAccent,
+      child: Text(this.widget.skill.title));
   }
 }
