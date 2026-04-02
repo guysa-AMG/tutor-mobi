@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:tutor/screens/chat.dart';
 import 'package:tutor/screens/home.dart';
+import 'package:tutor/screens/skillScreen.dart';
 import 'package:tutor/service/state_mgmt/controller/uiController.dart';
 
 class NavBar extends StatefulWidget {
@@ -27,7 +28,7 @@ class NavBarState extends State<NavBar> {
           icon: Icon(LucideIcons.moon),
         ),
       ),
-      body: Center(child: Home()),
+      body: Center(child: SkillScreen()),
       floatingActionButton: FloatingActionButton(
         onPressed: () => {
           Navigator.push(
