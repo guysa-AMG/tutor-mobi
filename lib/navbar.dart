@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:tutor/screens/chat.dart';
 import 'package:tutor/screens/home.dart';
+import 'package:tutor/screens/sign.dart';
 import 'package:tutor/screens/skillScreen.dart';
 import 'package:tutor/service/state_mgmt/controller/uiController.dart';
 
@@ -28,7 +29,7 @@ class NavBarState extends State<NavBar> {
           icon: Icon(LucideIcons.moon),
         ),
       ),
-      body: Center(child: SkillScreen()),
+      body: Center(child: SignInScreen()),
       floatingActionButton: FloatingActionButton(
         onPressed: () => {
           Navigator.push(

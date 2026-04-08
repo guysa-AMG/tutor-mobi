@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:tutor/screens/wtcsignin.dart';
 
 class SignInScreen extends StatefulWidget {
   @override
@@ -10,11 +11,11 @@ class SignInScreen extends StatefulWidget {
 class SignInScreenState extends State<SignInScreen> {
   ButtonStyle btnStyle = ButtonStyle(
     backgroundColor: WidgetStatePropertyAll(Colors.deepOrange),
-    foregroundColor: WidgetStatePropertyAll(Colors.white  ),
+    foregroundColor: WidgetStatePropertyAll(Colors.white),
     iconColor: WidgetStatePropertyAll(Colors.white),
-    shape: WidgetStatePropertyAll(RoundedRectangleBorder(borderRadius: BorderRadiusGeometry.circular(5)))
-
-    
+    shape: WidgetStatePropertyAll(
+      RoundedRectangleBorder(borderRadius: BorderRadiusGeometry.circular(5)),
+    ),
   );
   @override
   Widget build(BuildContext context) {
@@ -50,13 +51,25 @@ class SignInScreenState extends State<SignInScreen> {
                       onPressed: null,
                       label: Text("sign in with Github"),
                       icon: FaIcon(FontAwesomeIcons.github),
-                         style: btnStyle,
+                      style: btnStyle,
                     ),
                     ElevatedButton.icon(
                       onPressed: null,
                       label: Text("sign in with Gitlab"),
                       icon: FaIcon(FontAwesomeIcons.gitlab),
-                         style: btnStyle,
+                      style: btnStyle,
+                    ),
+                    ElevatedButton.icon(
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (builder)=>WtcPopupScreen()));
+                      },
+                      label: Text("sign in with Wethinkcode_"),
+                      icon: Image.asset(
+                        "assets/img/wtc.png",
+                        height: 24,
+                        width: 24,
+                      ),
+                      style: btnStyle,
                     ),
                   ],
                 ),
@@ -64,9 +77,27 @@ class SignInScreenState extends State<SignInScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  TextButton(onPressed: null, child: Text("Privacy Policy", style: TextStyle(color: Color(0xFFFFDBCF)))),
-                  TextButton(onPressed: null, child: Text("Terms of Use", style: TextStyle(color: Color(0xFFFFDBCF)))),
-                  TextButton(onPressed: null, child: Text("Data Policy", style: TextStyle(color: Color(0xFFFFDBCF)))),
+                  TextButton(
+                    onPressed: null,
+                    child: Text(
+                      "Privacy Policy",
+                      style: TextStyle(color: Color(0xFFFFDBCF)),
+                    ),
+                  ),
+                  TextButton(
+                    onPressed: null,
+                    child: Text(
+                      "Terms of Use",
+                      style: TextStyle(color: Color(0xFFFFDBCF)),
+                    ),
+                  ),
+                  TextButton(
+                    onPressed: null,
+                    child: Text(
+                      "Data Policy",
+                      style: TextStyle(color: Color(0xFFFFDBCF)),
+                    ),
+                  ),
                 ],
               ),
             ],

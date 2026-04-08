@@ -8,7 +8,6 @@ const String SERVER_URL = "http://20.20.20.48:8000";
 class Service1 {
   Service1._();
 
-
   Future<List<Skill>> getPaths() async {
     Response res = await Dio().get("$SERVER_URL/routes?limit=${20}");
     List<Skill> arrNodes = res.data
@@ -17,12 +16,15 @@ class Service1 {
     return arrNodes;
   }
 
-
   Future<Challenge> dailyChallenge() async {
     Response res = await Dio().get("$SERVER_URL/daily-challenge");
     return Challenge.fromJson(res.data);
   }
 
+  Future<void> moreInfo(String path) async {
+   
+    await Dio().get("${SERVER_URL + "/details" + path}");
+  }
 
   @protected
   static final _instance = Service1._();
