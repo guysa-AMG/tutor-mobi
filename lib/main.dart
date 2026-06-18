@@ -10,6 +10,7 @@ import 'package:tutor/service/state_mgmt/state/uiThemeState.dart';
 void main() {
   runApp(
     DevicePreview(
+      enabled: false,
       builder: (context) => MultiBlocProvider(
         providers: [BlocProvider(create: (context) => Uicontroller())],
         child: MyApp(),
@@ -31,12 +32,11 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             colorScheme: .fromSeed(
               dynamicSchemeVariant: DynamicSchemeVariant.content,
-              seedColor: const Color(0xFFAB3600),
+              seedColor: Colors.deepOrangeAccent,
             ),
             bottomNavigationBarTheme: BottomNavigationBarThemeData(
               backgroundColor: Color(0xffF1F1F1),
-              selectedItemColor: Color(0xFFAB3600),
-              unselectedItemColor: Color(0xA1390C00),
+            
             ),
           ),
           darkTheme: ThemeData(
@@ -45,12 +45,11 @@ class MyApp extends StatelessWidget {
             colorScheme: .fromSeed(
               brightness: Brightness.dark,
               dynamicSchemeVariant: DynamicSchemeVariant.content,
-              seedColor: const Color(0xFFFF5400),
+              seedColor:  Colors.deepOrangeAccent,
             ),
             bottomNavigationBarTheme: BottomNavigationBarThemeData(
               backgroundColor: Color(0xFF1B1B1B),
-              selectedItemColor: Color(0xFFFFFFFF),
-              unselectedItemColor: Color(0xF1FFB59C),
+           
             ),
           ),
           themeMode:state.mode,

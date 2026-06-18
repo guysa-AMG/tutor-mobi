@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:lucide_icons/lucide_icons.dart';
+import 'package:lucide_icons_flutter/lucide_icons.dart';
+
 import 'package:tutor/screens/wtcsignin.dart';
 
 class SignInScreen extends StatefulWidget {
@@ -10,9 +11,13 @@ class SignInScreen extends StatefulWidget {
 
 class SignInScreenState extends State<SignInScreen> {
   ButtonStyle btnStyle = ButtonStyle(
-    backgroundColor: WidgetStatePropertyAll(Colors.deepOrange),
-    foregroundColor: WidgetStatePropertyAll(Colors.white),
-    iconColor: WidgetStatePropertyAll(Colors.white),
+    padding: WidgetStatePropertyAll(EdgeInsets.symmetric(vertical: 10)),
+    fixedSize: WidgetStatePropertyAll(Size.fromWidth(280)),
+    textStyle: WidgetStatePropertyAll(TextStyle(fontWeight: FontWeight.w700,fontSize: 20,color: const Color.fromARGB(217, 0, 0, 0),letterSpacing: -1)),
+   backgroundColor: WidgetStatePropertyAll(Colors.deepOrangeAccent),
+     foregroundColor: WidgetStatePropertyAll(const Color.fromARGB(216, 0, 0, 0)),
+    iconColor: WidgetStatePropertyAll(Colors.black),
+    iconSize: WidgetStatePropertyAll(30),
     shape: WidgetStatePropertyAll(
       RoundedRectangleBorder(borderRadius: BorderRadiusGeometry.circular(5)),
     ),
@@ -22,7 +27,7 @@ class SignInScreenState extends State<SignInScreen> {
     return Scaffold(
       body: Center(
         child: Container(
-          color: Color(0xFF000000),
+      
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             spacing: 50,
@@ -30,7 +35,7 @@ class SignInScreenState extends State<SignInScreen> {
               FlutterLogo(),
               Text(
                 "Sign In To Continue",
-                style: TextStyle(fontSize: 30, color: Colors.cyan),
+                style: TextStyle(fontSize: 30,fontWeight: FontWeight.w600),
               ),
               Text(
                 "please sign in to continue",
@@ -39,14 +44,9 @@ class SignInScreenState extends State<SignInScreen> {
 
               Container(
                 child: Column(
-                  spacing: 10,
+                  spacing: 20,
                   children: [
-                    ElevatedButton.icon(
-                      onPressed: null,
-                      label: Text("sign in with google"),
-                      icon: FaIcon(FontAwesomeIcons.google),
-                      style: btnStyle,
-                    ),
+                   
                     ElevatedButton.icon(
                       onPressed: null,
                       label: Text("sign in with Github"),
@@ -66,8 +66,8 @@ class SignInScreenState extends State<SignInScreen> {
                       label: Text("sign in with Wethinkcode_"),
                       icon: Image.asset(
                         "assets/img/wtc.png",
-                        height: 24,
-                        width: 24,
+                        height: 30,
+                        width: 30,
                       ),
                       style: btnStyle,
                     ),
