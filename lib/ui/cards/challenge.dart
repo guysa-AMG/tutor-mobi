@@ -30,7 +30,7 @@ class ChallengeCardState extends State<ChallengeCard> {
   Widget build(BuildContext context) {
     return  Card(
       elevation: 0,
-      color: Color(0xff001F25),
+      color: Color.fromARGB(136, 0, 31, 37),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(topLeft: Radius.circular(0), bottomLeft: Radius.circular(0))),
       child:Container(
   

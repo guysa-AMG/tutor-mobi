@@ -30,6 +30,7 @@ class MyApp extends StatelessWidget {
        return MaterialApp(
           title: 'Flutter Demo',
           theme: ThemeData(
+            scaffoldBackgroundColor: Colors.white,
             colorScheme: .fromSeed(
               dynamicSchemeVariant: DynamicSchemeVariant.content,
               seedColor: Colors.deepOrangeAccent,
@@ -39,10 +40,9 @@ class MyApp extends StatelessWidget {
             
             ),
           ),
-          darkTheme: ThemeData(
-            textTheme: GoogleFonts.spaceGroteskTextTheme(),
-            scaffoldBackgroundColor: const Color.fromARGB(248, 20, 20, 20),
-            colorScheme: .fromSeed(
+          darkTheme: ThemeData.dark().copyWith(
+           
+           colorScheme: .fromSeed(
               brightness: Brightness.dark,
               dynamicSchemeVariant: DynamicSchemeVariant.content,
               seedColor:  Colors.deepOrangeAccent,

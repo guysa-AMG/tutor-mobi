@@ -31,7 +31,7 @@ class NavBarState extends State<NavBar> {
         ),
       ),
       body: Center(child: 
-     SkillScreen()
+     Home()
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => {
